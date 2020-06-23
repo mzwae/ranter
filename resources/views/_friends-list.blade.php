@@ -6,7 +6,7 @@
 
     <li class="mb-4">
         <div class="flex items-center text-sm">
-            <img src="https://i.pravatar.cc/40" alt="" class="rounded-full mr-2">
+        <img src="https://i.pravatar.cc/40?img=2" alt="img" class="rounded-full mr-2">
             John Doe
         </div>
 

@@ -2,34 +2,35 @@
 
 @section('content')
 
-    <div class="lg:flex">
+    <div class="lg:flex lg:justify-between">
 
         <div class="lg:w-1/6">
             @include('_sidebar-links')
         </div>
 
-        <div class="lg:flex-1 lg:mx-10">
+        <div class="lg:flex-1 lg:mx-10" style="max-width: 700px;">
 
-            <div class="border border-blue-400 rounded-lg px-8 py-6">
-                <form action="">
-                    <textarea name="body" class="w-full" placeholder="What's up?"></textarea>
-                </form>
+            @include('_publish-tweet-panel')
 
-                <hr class="my-4">
+            <div class="border border-gray-300 rounded-lg">
 
-                <footer class="flex justify-between">
-                    <img src="https://i.pravatar.cc/40?img=2" alt="img" class="rounded-full mr-2">
-                    <button class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Rant!</button>
-                </footer>
-            </div>
-
-            <div>
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
+           @include('rant')
 
             </div>
 
         </div>
 
-        <div class="lg:w-1/6">
+        <div class="lg:w-1/6 bg-blue-100 rounded-lg p-4">
             @include('_friends-list')
         </div>
 

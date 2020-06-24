@@ -10,7 +10,7 @@
 
         <div class="lg:flex-1 lg:mx-10" style="max-width: 700px;">
 
-            @include('_publish-tweet-panel')
+            @include('_publish-rant-panel')
 
             <div class="border border-gray-300 rounded-lg">
 

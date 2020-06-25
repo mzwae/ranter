@@ -5,9 +5,9 @@
     </div>
 
     <div>
-        <h5 class="font-bold mb-4">John Doe</h5>
+        <h5 class="font-bold mb-4">{{ $rant->user->name }}</h5>
 
-        <p class="text-sm">This is a rant from me.</p>
+        <p class="text-sm">{{ $rant->body }}</p>
     </div>
 
 </div>

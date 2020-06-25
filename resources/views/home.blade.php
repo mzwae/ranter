@@ -14,17 +14,10 @@
 
             <div class="border border-gray-300 rounded-lg">
 
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
-           @include('rant')
+            @foreach($rants as $rant)
+                @include('rant')
+            @endforeach
+     
 
             </div>
 

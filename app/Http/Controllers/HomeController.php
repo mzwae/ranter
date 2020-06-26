@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('home', [
-            'rants' => Rant::all()
+            'rants' => auth()->user()->timeline()
         ]);
     }
 }

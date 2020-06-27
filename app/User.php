@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function timeline(){
-        return Rant::latest()->get();
+        return Rant::where('user_id', $this->id)->latest()->get();
     }
 }

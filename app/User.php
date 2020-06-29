@@ -37,7 +37,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+
     public function timeline()
     {
         return Rant::where('user_id', $this->id)->latest()->get();
@@ -47,5 +47,10 @@ class User extends Authenticatable
     public function follows()
     {
         return $this->belongsToMany(User::class);
+    }
+
+    public function follow(User $user)
+    {
+        return $this->follows()->save($user);
     }
 }

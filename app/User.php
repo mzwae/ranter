@@ -53,4 +53,9 @@ class User extends Authenticatable
     {
         return $this->follows()->save($user);
     }
+
+    public function rants()
+    {
+        return $this->hasMany(Rant::class);
+    }
 }

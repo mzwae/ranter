@@ -17,8 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function(){
+
+    Route::get('/rants', 'RantController@index')->name('home');
+    Route::post('/rants', 'RantController@store');
+});
+
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/rants', 'RantController@store');

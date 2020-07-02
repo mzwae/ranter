@@ -38,9 +38,18 @@ class User extends Authenticatable
     ];
 
 
+    /**
+     * Include all of the user's rants
+     * including the rants of everyone they follow,
+     * in descending order
+     */
     public function timeline()
     {
-        return Rant::where('user_id', $this->id)->latest()->get();
+        $friends = $this->follows()->pluck('id');
+
+        return Rant::whereIn('user_id', $friends)
+        ->orWhere('user_id', $this->id)
+        ->latest()->get();
     }
 
 

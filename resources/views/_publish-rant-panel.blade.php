@@ -3,7 +3,7 @@
 
         @csrf
 
-        <textarea name="body" class="w-full" placeholder="What's up?"></textarea>
+    <textarea name="body" class="w-full" placeholder="What's up {{ auth()->user()->name}}?"></textarea>
 
 
         <hr class="my-4">

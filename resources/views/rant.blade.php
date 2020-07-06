@@ -1,7 +1,9 @@
 <div class="flex p-4 border-b border-b-gray-400">
 
     <div class="mr-2 flex-shrink-0">
-        <img src="https://i.pravatar.cc/50?u={{ $rant->user->email }}" alt="img" class="rounded-full mr-2">
+    <a href="{{ route('profile', $rant->user->name)}}">
+            <img src="https://i.pravatar.cc/50?u={{ $rant->user->email }}" alt="img" class="rounded-full mr-2">
+        </a>
     </div>
 
     <div>

@@ -6,8 +6,10 @@
 
     <li class="mb-4">
         <div class="flex items-center text-sm">
-        <img src="https://i.pravatar.cc/40?u={{ $user->email }}" alt="img" class="rounded-full mr-2">
+        <a href="{{ route('profile', $user->name)}}">
+            <img src="https://i.pravatar.cc/40?u={{ $user->email }}" alt="img" class="rounded-full mr-2">
             {{ $user->name }}
+        </a>
         </div>
 
     </li>

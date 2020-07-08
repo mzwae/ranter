@@ -38,6 +38,12 @@ class User extends Authenticatable
     ];
 
 
+    public function getAvatarAttribute()
+    {
+        return "https://i.pravatar.cc/200?u=" . $this->email;
+    }
+
+
     /**
      * Include all of the user's rants
      * including the rants of everyone they follow,

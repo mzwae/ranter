@@ -2,7 +2,7 @@
 
     <div class="mr-2 flex-shrink-0">
     <a href="{{ route('profile', $rant->user->name)}}">
-            <img src="https://i.pravatar.cc/50?u={{ $rant->user->email }}" alt="img" class="rounded-full mr-2">
+            <img src="{{ $rant->user->avatar }}" alt="img" class="rounded-full mr-2" width="40" height="40">
         </a>
     </div>
 

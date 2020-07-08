@@ -7,7 +7,7 @@
     <li class="mb-4">
         <div class="flex items-center text-sm">
         <a href="{{ route('profile', $user->name)}}">
-            <img src="https://i.pravatar.cc/40?u={{ $user->email }}" alt="img" class="rounded-full mr-2">
+        <img src="{{$user->avatar}}" alt="img" class="rounded-full mr-2" width="40" height="40">
             {{ $user->name }}
         </a>
         </div>

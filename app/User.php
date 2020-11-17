@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -56,17 +56,6 @@ class User extends Authenticatable
         return Rant::whereIn('user_id', $friends)
         ->orWhere('user_id', $this->id)
         ->latest()->get();
-    }
-
-
-    public function follows()
-    {
-        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
-    }
-
-    public function follow(User $user)
-    {
-        return $this->follows()->save($user);
     }
 
     public function rants()

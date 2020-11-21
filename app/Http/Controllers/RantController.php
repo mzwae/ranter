@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rant;
 use Illuminate\Http\Request;
 
 class RantController extends Controller

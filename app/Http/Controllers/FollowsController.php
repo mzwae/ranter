@@ -11,7 +11,7 @@ class FollowsController extends Controller
     {
         auth()
               ->user()
-              ->follow($user);
+              ->toggleFollow($user);
 
         return back();
     }

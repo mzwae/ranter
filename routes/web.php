@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/rants', 'RantController@index')->name('home');
     Route::post('/rants', 'RantController@store');
     Route::post('/profiles/{user:name}/follow', 'FollowsController@store');
+    Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit');
 });
 
 Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');

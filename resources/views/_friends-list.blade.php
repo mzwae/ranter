@@ -2,7 +2,7 @@
 
 
 <ul>
-    @foreach(auth()->user()->follows as $user)
+    @foreach(current_user()->follows as $user)
 
     <li class="mb-4">
         <div class="flex items-center text-sm">

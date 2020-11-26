@@ -14,8 +14,6 @@
 
         <div class="flex">
             @can('edit', $user)
-
-
                 <a href="{{ $user->path('edit')}}" class="bg-blue-500 rounded-full shadow py-2 px-4 text-black text-xs mr-2">Edit Profile</a>
             @endcan
             {{-- <a href="" class="bg-blue-500 rounded-lg shadow py-2 px-4 text-white text-xs">Follow Me</a> --}}

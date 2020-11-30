@@ -2,7 +2,7 @@
 
 
 <ul>
-    @foreach(current_user()->follows as $user)
+    @forelse(current_user()->follows as $user)
 
     <li class="mb-4">
         <div class="flex items-center text-sm">
@@ -14,7 +14,12 @@
 
     </li>
 
-    @endforeach
+    @empty
+    <li>No friends yet!</li>
+
+
+
+    @endforelse
 
 
 </ul>

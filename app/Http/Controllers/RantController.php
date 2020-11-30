@@ -27,6 +27,6 @@ class RantController extends Controller
             'body' => $attributes['body']
         ]);
 
-        return redirect('/home');
+        return redirect('/rants');
     }
 }

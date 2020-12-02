@@ -53,9 +53,9 @@
         <li>
             <a
                 class="font-bold text-lg mb-4 block"
-                href="{{ route('profile', auth()->user()->name) }}"
+                href="{{ route('profile', auth()->user()->username) }}"
             >
-                profile
+                Profile
             </a>
         </li>
         <li>

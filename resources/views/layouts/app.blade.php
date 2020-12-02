@@ -39,14 +39,14 @@
             <div class="col-md-2">
                 @include('_sidebar-links')
             </div>
-            @endauth
             <div class="col-md-8" style="max-width: 700px;">
+            @endauth
 
                 @yield('content')
 
-            </div>
 
             @auth('')
+            </div>
             <div class="col-md-2">
                 @include('_friends-list')
             </div>

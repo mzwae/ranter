@@ -24,12 +24,12 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/rants', 'RantController@index')->name('home');
     Route::post('/rants', 'RantController@store');
-    Route::post('/profiles/{user:name}/follow', 'FollowsController@store');
-    Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit');
+    Route::post('/profiles/{user:username}/follow', 'FollowsController@store');
+    Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit');
     // Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
     Route::patch('/profiles/{user:name}', 'ProfilesController@update');
 });
 
-Route::get('/profiles/{user:name}', 'ProfilesController@show')->name('profile');
+Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');
 
 Auth::routes();

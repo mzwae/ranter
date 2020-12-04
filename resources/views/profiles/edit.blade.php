@@ -17,6 +17,15 @@
             <p class="text-danger">{{ $message }}</p>
           @enderror
     </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text"
+          class="form-control" name="username" value="{{ $user->username }}">
+
+          @error('username')
+            <p class="text-danger">{{ $message }}</p>
+          @enderror
+    </div>
 
     <div class="form-group">
       <label for="email">Email</label>

@@ -10,7 +10,7 @@
 
         <footer class="flex justify-between">
             <img src="{{auth()->user()->avatar}}" alt="img" class="rounded-full mr-2" width="50" height="50">
-            <button type="submit" class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Rant!</button>
+            <button type="submit" class="btn btn-outline-primary pl-5 pr-5">Rant!</button>
         </footer>
     </form>
 

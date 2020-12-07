@@ -3,7 +3,7 @@
 
         @csrf
 
-        <textarea required name="body" class="w-full" placeholder="What's up {{ auth()->user()->name}}?"></textarea>
+        <textarea autofocus required name="body" class="w-full" placeholder="What's up {{ auth()->user()->name}}?"></textarea>
 
 
         <hr class="my-4">

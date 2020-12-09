@@ -37,7 +37,7 @@
 <hr>
 
 @include('_timeline', [
-'rants' => $user->rants
+'rants' => $rants
 ])
 
 @endsection

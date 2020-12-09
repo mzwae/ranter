@@ -55,7 +55,8 @@ class User extends Authenticatable
 
         return Rant::whereIn('user_id', $friends)
         ->orWhere('user_id', $this->id)
-        ->latest()->get();
+        ->latest()
+        ->paginate(10);
     }
 
     public function rants()

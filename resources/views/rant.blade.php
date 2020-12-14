@@ -10,6 +10,11 @@
         <h5 class="font-bold mb-4">{{ $rant->user->name }}</h5>
 
         <p class="text-sm">{{ $rant->body }}</p>
+        <hr class="mt-3 mb-3">
+        <div>
+            <span class="fa fa-thumbs-up p-2 btn btn-outline-success mr-5">{{ $rant->likes ?: 0 }}</span>
+            <span class="fa fa-thumbs-down p-2 btn btn-outline-danger">{{ $rant->dislikes ?: 0}}</span>
+        </div>
     </div>
 
 </div>

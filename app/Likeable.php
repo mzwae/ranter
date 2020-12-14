@@ -2,8 +2,19 @@
 
 namespace App;
 
+use Illuminate\Database\Query\Builder;
+
 trait Likeable
 {
+    public function scopeWithLikes(Builder $query)
+    {
+        $query->leftJoin(
+            'select tweet_id, sum(liked) likes, sum(!liked) dislikes from likes group by tweet_id',
+            'likes',
+            'likes.tweet_id',
+            'tweets.id'
+        );
+    }
     public function isDislikedBy(User $user)
     {
         return (bool) $user->likes

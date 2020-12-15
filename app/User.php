@@ -55,6 +55,7 @@ class User extends Authenticatable
 
         return Rant::whereIn('user_id', $friends)
         ->orWhere('user_id', $this->id)
+        ->withLikes()
         ->latest()
         ->paginate(10);
     }

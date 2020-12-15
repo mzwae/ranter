@@ -2,23 +2,23 @@
 
 namespace App;
 
-use Illuminate\Database\Query\Builder;
+use Illuminate\Database\Eloquent\Builder;
 
 trait Likeable
 {
     public function scopeWithLikes(Builder $query)
     {
-        $query->leftJoin(
-            'select tweet_id, sum(liked) likes, sum(!liked) dislikes from likes group by tweet_id',
+        $query->leftJoinSub(
+            'select rant_id, sum(liked) likes, sum(!liked) dislikes from likes group by rant_id',
             'likes',
-            'likes.tweet_id',
-            'tweets.id'
+            'likes.rant_id',
+            'rants.id'
         );
     }
     public function isDislikedBy(User $user)
     {
         return (bool) $user->likes
-        ->where('tweet_id', $this->id)
+        ->where('rant_id', $this->id)
         ->where('liked', false)
         ->count();
     }
@@ -31,7 +31,7 @@ trait Likeable
     public function isLikedBy(User $user)
     {
         return (bool) $user->likes
-        ->where('tweet_id', $this->id)
+        ->where('rant_id', $this->id)
         ->where('liked', true)
         ->count();
     }

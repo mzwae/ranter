@@ -11,9 +11,17 @@
 
         <p class="text-sm">{{ $rant->body }}</p>
         <hr class="mt-3 mb-3">
-        <div>
-            <span class="fa fa-thumbs-up p-2 btn btn-outline-success mr-5 {{ $rant->isLikedBy(current_user()) ? 'disabled':'' }}">{{ $rant->likes ?: 0 }}</span>
-            <span class="fa fa-thumbs-down p-2 btn btn-outline-danger {{ $rant->isDislikedBy(current_user()) ? 'disabled':'' }}">{{ $rant->dislikes ?: 0}}</span>
+        <div class="form-inline">
+        <form action="/rants/{{ $rant->id }}/like" method="post">
+            @csrf
+            <button type="submit" class="fa fa-thumbs-up p-2 btn btn-outline-success mr-5 {{ $rant->isLikedBy(current_user()) ? 'disabled':'' }}">{{ $rant->likes ?: 0 }}</button>
+        </form>
+
+        <form action="/rants/{{ $rant->id }}/like" method="post">
+            @csrf
+            @method('delete')
+            <button class="fa fa-thumbs-down p-2 btn btn-outline-danger {{ $rant->isDislikedBy(current_user()) ? 'disabled':'' }}">{{ $rant->dislikes ?: 0}}</button>
+        </form>
         </div>
     </div>
 

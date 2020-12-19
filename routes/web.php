@@ -25,6 +25,13 @@ Route::middleware('auth')->group(function(){
     Route::get('/rants', 'RantController@index')->name('home');
     Route::post('/rants', 'RantController@store');
     Route::post('/profiles/{user:username}/follow', 'FollowsController@store');
+
+
+    Route::post('/rants/{rant}/like', 'RantLikesController@store');
+    Route::delete('/rants/{rant}/like', 'RantLikesController@destroy');
+
+
+
     Route::get('/profiles/{user:username}/edit', 'ProfilesController@edit');
     // Route::get('/profiles/{user:name}/edit', 'ProfilesController@edit')->middleware('can:edit,user');
     Route::patch('/profiles/{user:username}', 'ProfilesController@update');

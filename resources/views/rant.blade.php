@@ -12,7 +12,8 @@
         <p class="text-sm">{{ $rant->body }}</p>
         <hr class="mt-3 mb-3">
         <div class="form-inline">
-        <form action="/rants/{{ $rant->id }}/like" method="post">
+        {{-- <form action="/rants/{{ $rant->id }}/like" method="post"> --}}
+        <form action="{{ action('RantLikesController@store', ['rant' => $rant->id]) }}" method="post">
             @csrf
             <button type="submit" class="fa fa-thumbs-up p-2 btn btn-outline-success mr-5 {{ $rant->isLikedBy(current_user()) ? 'disabled':'' }}">{{ $rant->likes ?: 0 }}</button>
         </form>

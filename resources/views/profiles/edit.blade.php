@@ -36,6 +36,16 @@
             <p class="text-danger">{{ $message }}</p>
         @enderror
     </div>
+    <div class="form-group">
+      <label for="bio">Bio</label>
+      <textarea
+        class="form-control" name="bio" value="{{ $user->bio }}">
+    </textarea>
+
+        @error('bio')
+            <p class="text-danger">{{ $message }}</p>
+        @enderror
+    </div>
 
     <button type="submit" class="btn btn-outline-primary">Submit</button>
 

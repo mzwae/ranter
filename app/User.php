@@ -81,4 +81,16 @@ class User extends Authenticatable
     {
         return $this->hasOne(Bio::class);
     }
+
+    public function updateOrCreateBio($user = null, $bio)
+    {
+        $this->bio()->updateOrCreate(
+            [
+                'user_id' => $user ? $user->id : auth()->id(),
+            ],
+            [
+                'bio' => $bio,
+            ]
+        );
+    }
 }

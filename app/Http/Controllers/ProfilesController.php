@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bio;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -35,10 +36,17 @@ class ProfilesController extends Controller
         $attributes = request()->validate([
             'username' => ['string', 'required', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($user)],
             'name' => ['string', 'required', 'max:255'],
-            'email' => ['string', 'required', 'email', 'max:255']
+            'email' => ['string', 'required', 'email', 'max:255'],
+            'bio' => ['string', 'required', 'max:255']
         ]);
 
+        // dd($attributes);
+
         $user->update($attributes);
+
+        $user_bio = $attributes['bio'];
+
+        $user->updateOrCreateBio($user, $user_bio);
 
         return redirect($user->path());
     }

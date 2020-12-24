@@ -89,7 +89,7 @@ class User extends Authenticatable
                 'user_id' => $user ? $user->id : auth()->id(),
             ],
             [
-                'bio' => $bio,
+                'body' => $bio,
             ]
         );
     }

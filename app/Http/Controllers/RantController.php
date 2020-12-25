@@ -29,4 +29,19 @@ class RantController extends Controller
 
         return redirect('/rants');
     }
+
+
+    public function edit()
+    {
+        $attributes = request()->validate(['body' => 'required|max:255']);
+
+        $rant = request()->rant_id;
+
+           // Update data in the database
+          $rant->update([
+            'body' => $attributes['body']
+        ]);
+
+        return redirect('/rants');
+    }
 }

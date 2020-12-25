@@ -10,4 +10,10 @@
         @method('delete')
         <button class="fa fa-thumbs-down p-2 btn btn-outline-danger {{ $rant->isDislikedBy(current_user()) ? 'disabled':'' }}"> {{ $rant->dislikes ?: 0}}</button>
     </form>
+
+    @if(current_user()->id === $rant->user_id)
+    <form action="/rants/{{ $rant->id }}/edit">
+        <button class="fa fa-pencil p-2 ml-5 btn btn-outline-info">Edit</button>
+    </form>
+    @endif
 </div>

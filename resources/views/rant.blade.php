@@ -16,3 +16,4 @@
     </div>
 
 </div>
+<x-edit-rant-modal :rant="$rant"/>

@@ -12,8 +12,6 @@
     </form>
 
     @if(current_user()->id === $rant->user_id)
-    <form action="/rants/{{ $rant->id }}/edit">
-        <button class="fa fa-pencil p-2 ml-5 btn btn-outline-info">Edit</button>
-    </form>
+        <a class="fa fa-pencil p-2 ml-5 btn btn-outline-info" data-toggle="modal" data-target="#editModal-{{ $rant->id }}">Edit</a>
     @endif
 </div>

@@ -11,6 +11,7 @@
         <!-- Modal body -->
         <div class="modal-body">
         <form action="/rants/{{ $rant->id }}/edit" method="post">
+            @method('patch')
             <div class="form-group">
             <label for="body">Edit Rant</label>
               <textarea class="form-control" name="body" id="body" cols="30" rows="10">{{ $rant->body }}</textarea>

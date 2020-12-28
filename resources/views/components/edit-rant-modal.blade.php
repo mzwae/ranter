@@ -12,6 +12,7 @@
         <div class="modal-body">
         <form action="/rants/{{ $rant->id }}/edit" method="post">
             @method('patch')
+            @csrf
             <div class="form-group">
             <label for="body">Edit Rant</label>
               <textarea class="form-control" name="body" id="body" cols="30" rows="10">{{ $rant->body }}</textarea>
@@ -19,7 +20,6 @@
 
             <input type="submit" value="Save" class="btn btn-outline-primary">
             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-            <input type="hidden" name="_token" value="{{Session::token()}}">
           </form>
         </div>
 

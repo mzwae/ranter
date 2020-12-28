@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/rants', 'RantController@index')->name('home');
     Route::post('/rants', 'RantController@store');
-    Route::post('/rants/{rant}/edit', 'RantController@edit');
+    Route::patch('/rants/{rant}/edit', 'RantController@edit');
 
     Route::post('/profiles/{user:username}/follow', 'FollowsController@store');
 

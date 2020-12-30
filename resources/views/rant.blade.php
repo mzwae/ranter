@@ -17,3 +17,4 @@
 
 </div>
 <x-edit-rant-modal :rant="$rant"/>
+<x-delete-rant-modal :rant="$rant"/>

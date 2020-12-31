@@ -42,4 +42,11 @@ class RantController extends Controller
 
         return back();
     }
+
+    public function delete(Rant $rant)
+    {
+        Rant::destroy($rant->id);
+
+        return back();
+    }
 }

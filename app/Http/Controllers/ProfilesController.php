@@ -40,13 +40,13 @@ class ProfilesController extends Controller
             'bio' => ['string', 'required', 'max:255']
         ]);
 
-        // dd($attributes);
+        // dd($user->update($attributes));
 
         $user->update($attributes);
 
-        $user_bio = $attributes['bio'];
+        // $user_bio = $attributes['bio'];
 
-        $user->updateOrCreateBio($user, $user_bio);
+        // $user->updateOrCreateBio($user, $user_bio);
 
         return redirect($user->path());
     }

@@ -38,7 +38,7 @@
     </div>
     <div class="form-group">
       <label for="bio">Bio</label>
-      <textarea class="form-control" name="bio">{{ $user->bio ? $user->bio->body : "" }}</textarea>
+      <textarea class="form-control" name="bio">{{ $user->bio ? $user->bio : "" }}</textarea>
 
         @error('bio')
             <p class="text-danger">{{ $message }}</p>
